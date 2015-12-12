@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DDA54C791C1C475000FEBB19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA54C781C1C475000FEBB19 /* AppDelegate.swift */; };
+		DDA54C7B1C1C475000FEBB19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA54C7A1C1C475000FEBB19 /* ViewController.swift */; };
+		DDA54C7E1C1C475000FEBB19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA54C7C1C1C475000FEBB19 /* Main.storyboard */; };
+		DDA54C801C1C475000FEBB19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDA54C7F1C1C475000FEBB19 /* Assets.xcassets */; };
+		DDA54C831C1C475000FEBB19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA54C811C1C475000FEBB19 /* LaunchScreen.storyboard */; };
+		DDA54C8E1C1C475000FEBB19 /* NapySliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA54C8D1C1C475000FEBB19 /* NapySliderTests.swift */; };
+		DDA54C991C1C475000FEBB19 /* NapySliderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA54C981C1C475000FEBB19 /* NapySliderUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DDA54C8A1C1C475000FEBB19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDA54C6D1C1C475000FEBB19 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDA54C741C1C475000FEBB19;
+			remoteInfo = NapySlider;
+		};
+		DDA54C951C1C475000FEBB19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDA54C6D1C1C475000FEBB19 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDA54C741C1C475000FEBB19;
+			remoteInfo = NapySlider;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DDA54C751C1C475000FEBB19 /* NapySlider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NapySlider.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDA54C781C1C475000FEBB19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DDA54C7A1C1C475000FEBB19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DDA54C7D1C1C475000FEBB19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DDA54C7F1C1C475000FEBB19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DDA54C821C1C475000FEBB19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DDA54C841C1C475000FEBB19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDA54C891C1C475000FEBB19 /* NapySliderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NapySliderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDA54C8D1C1C475000FEBB19 /* NapySliderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NapySliderTests.swift; sourceTree = "<group>"; };
+		DDA54C8F1C1C475000FEBB19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDA54C941C1C475000FEBB19 /* NapySliderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NapySliderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDA54C981C1C475000FEBB19 /* NapySliderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NapySliderUITests.swift; sourceTree = "<group>"; };
+		DDA54C9A1C1C475000FEBB19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DDA54C721C1C475000FEBB19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA54C861C1C475000FEBB19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA54C911C1C475000FEBB19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DDA54C6C1C1C475000FEBB19 = {
+			isa = PBXGroup;
+			children = (
+				DDA54C771C1C475000FEBB19 /* NapySlider */,
+				DDA54C8C1C1C475000FEBB19 /* NapySliderTests */,
+				DDA54C971C1C475000FEBB19 /* NapySliderUITests */,
+				DDA54C761C1C475000FEBB19 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DDA54C761C1C475000FEBB19 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DDA54C751C1C475000FEBB19 /* NapySlider.app */,
+				DDA54C891C1C475000FEBB19 /* NapySliderTests.xctest */,
+				DDA54C941C1C475000FEBB19 /* NapySliderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DDA54C771C1C475000FEBB19 /* NapySlider */ = {
+			isa = PBXGroup;
+			children = (
+				DDA54C781C1C475000FEBB19 /* AppDelegate.swift */,
+				DDA54C7A1C1C475000FEBB19 /* ViewController.swift */,
+				DDA54C7C1C1C475000FEBB19 /* Main.storyboard */,
+				DDA54C7F1C1C475000FEBB19 /* Assets.xcassets */,
+				DDA54C811C1C475000FEBB19 /* LaunchScreen.storyboard */,
+				DDA54C841C1C475000FEBB19 /* Info.plist */,
+			);
+			path = NapySlider;
+			sourceTree = "<group>";
+		};
+		DDA54C8C1C1C475000FEBB19 /* NapySliderTests */ = {
+			isa = PBXGroup;
+			children = (
+				DDA54C8D1C1C475000FEBB19 /* NapySliderTests.swift */,
+				DDA54C8F1C1C475000FEBB19 /* Info.plist */,
+			);
+			path = NapySliderTests;
+			sourceTree = "<group>";
+		};
+		DDA54C971C1C475000FEBB19 /* NapySliderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DDA54C981C1C475000FEBB19 /* NapySliderUITests.swift */,
+				DDA54C9A1C1C475000FEBB19 /* Info.plist */,
+			);
+			path = NapySliderUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DDA54C741C1C475000FEBB19 /* NapySlider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDA54C9D1C1C475000FEBB19 /* Build configuration list for PBXNativeTarget "NapySlider" */;
+			buildPhases = (
+				DDA54C711C1C475000FEBB19 /* Sources */,
+				DDA54C721C1C475000FEBB19 /* Frameworks */,
+				DDA54C731C1C475000FEBB19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NapySlider;
+			productName = NapySlider;
+			productReference = DDA54C751C1C475000FEBB19 /* NapySlider.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DDA54C881C1C475000FEBB19 /* NapySliderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDA54CA01C1C475000FEBB19 /* Build configuration list for PBXNativeTarget "NapySliderTests" */;
+			buildPhases = (
+				DDA54C851C1C475000FEBB19 /* Sources */,
+				DDA54C861C1C475000FEBB19 /* Frameworks */,
+				DDA54C871C1C475000FEBB19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDA54C8B1C1C475000FEBB19 /* PBXTargetDependency */,
+			);
+			name = NapySliderTests;
+			productName = NapySliderTests;
+			productReference = DDA54C891C1C475000FEBB19 /* NapySliderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DDA54C931C1C475000FEBB19 /* NapySliderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDA54CA31C1C475000FEBB19 /* Build configuration list for PBXNativeTarget "NapySliderUITests" */;
+			buildPhases = (
+				DDA54C901C1C475000FEBB19 /* Sources */,
+				DDA54C911C1C475000FEBB19 /* Frameworks */,
+				DDA54C921C1C475000FEBB19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDA54C961C1C475000FEBB19 /* PBXTargetDependency */,
+			);
+			name = NapySliderUITests;
+			productName = NapySliderUITests;
+			productReference = DDA54C941C1C475000FEBB19 /* NapySliderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DDA54C6D1C1C475000FEBB19 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = naptics;
+				TargetAttributes = {
+					DDA54C741C1C475000FEBB19 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					DDA54C881C1C475000FEBB19 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = DDA54C741C1C475000FEBB19;
+					};
+					DDA54C931C1C475000FEBB19 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = DDA54C741C1C475000FEBB19;
+					};
+				};
+			};
+			buildConfigurationList = DDA54C701C1C475000FEBB19 /* Build configuration list for PBXProject "NapySlider" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DDA54C6C1C1C475000FEBB19;
+			productRefGroup = DDA54C761C1C475000FEBB19 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DDA54C741C1C475000FEBB19 /* NapySlider */,
+				DDA54C881C1C475000FEBB19 /* NapySliderTests */,
+				DDA54C931C1C475000FEBB19 /* NapySliderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DDA54C731C1C475000FEBB19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA54C831C1C475000FEBB19 /* LaunchScreen.storyboard in Resources */,
+				DDA54C801C1C475000FEBB19 /* Assets.xcassets in Resources */,
+				DDA54C7E1C1C475000FEBB19 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA54C871C1C475000FEBB19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA54C921C1C475000FEBB19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DDA54C711C1C475000FEBB19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA54C7B1C1C475000FEBB19 /* ViewController.swift in Sources */,
+				DDA54C791C1C475000FEBB19 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA54C851C1C475000FEBB19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA54C8E1C1C475000FEBB19 /* NapySliderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA54C901C1C475000FEBB19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA54C991C1C475000FEBB19 /* NapySliderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DDA54C8B1C1C475000FEBB19 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDA54C741C1C475000FEBB19 /* NapySlider */;
+			targetProxy = DDA54C8A1C1C475000FEBB19 /* PBXContainerItemProxy */;
+		};
+		DDA54C961C1C475000FEBB19 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDA54C741C1C475000FEBB19 /* NapySlider */;
+			targetProxy = DDA54C951C1C475000FEBB19 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DDA54C7C1C1C475000FEBB19 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDA54C7D1C1C475000FEBB19 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DDA54C811C1C475000FEBB19 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDA54C821C1C475000FEBB19 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DDA54C9B1C1C475000FEBB19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DDA54C9C1C1C475000FEBB19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DDA54C9E1C1C475000FEBB19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NapySlider/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.naptics.NapySlider;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DDA54C9F1C1C475000FEBB19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NapySlider/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.naptics.NapySlider;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DDA54CA11C1C475000FEBB19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NapySliderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.naptics.NapySliderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NapySlider.app/NapySlider";
+			};
+			name = Debug;
+		};
+		DDA54CA21C1C475000FEBB19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NapySliderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.naptics.NapySliderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NapySlider.app/NapySlider";
+			};
+			name = Release;
+		};
+		DDA54CA41C1C475000FEBB19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = NapySliderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.naptics.NapySliderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = NapySlider;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		DDA54CA51C1C475000FEBB19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = NapySliderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.naptics.NapySliderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = NapySlider;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DDA54C701C1C475000FEBB19 /* Build configuration list for PBXProject "NapySlider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDA54C9B1C1C475000FEBB19 /* Debug */,
+				DDA54C9C1C1C475000FEBB19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDA54C9D1C1C475000FEBB19 /* Build configuration list for PBXNativeTarget "NapySlider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDA54C9E1C1C475000FEBB19 /* Debug */,
+				DDA54C9F1C1C475000FEBB19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DDA54CA01C1C475000FEBB19 /* Build configuration list for PBXNativeTarget "NapySliderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDA54CA11C1C475000FEBB19 /* Debug */,
+				DDA54CA21C1C475000FEBB19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DDA54CA31C1C475000FEBB19 /* Build configuration list for PBXNativeTarget "NapySliderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDA54CA41C1C475000FEBB19 /* Debug */,
+				DDA54CA51C1C475000FEBB19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DDA54C6D1C1C475000FEBB19 /* Project object */;
+}
