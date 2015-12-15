@@ -14,6 +14,7 @@
 		DDA54C831C1C475000FEBB19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA54C811C1C475000FEBB19 /* LaunchScreen.storyboard */; };
 		DDA54C8E1C1C475000FEBB19 /* NapySliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA54C8D1C1C475000FEBB19 /* NapySliderTests.swift */; };
 		DDA54C991C1C475000FEBB19 /* NapySliderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA54C981C1C475000FEBB19 /* NapySliderUITests.swift */; };
+		DDA54CA71C1C477100FEBB19 /* NapySlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA54CA61C1C477100FEBB19 /* NapySlider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		DDA54C941C1C475000FEBB19 /* NapySliderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NapySliderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA54C981C1C475000FEBB19 /* NapySliderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NapySliderUITests.swift; sourceTree = "<group>"; };
 		DDA54C9A1C1C475000FEBB19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDA54CA61C1C477100FEBB19 /* NapySlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NapySlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				DDA54C7F1C1C475000FEBB19 /* Assets.xcassets */,
 				DDA54C811C1C475000FEBB19 /* LaunchScreen.storyboard */,
 				DDA54C841C1C475000FEBB19 /* Info.plist */,
+				DDA54CA61C1C477100FEBB19 /* NapySlider.swift */,
 			);
 			path = NapySlider;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDA54C7B1C1C475000FEBB19 /* ViewController.swift in Sources */,
+				DDA54CA71C1C477100FEBB19 /* NapySlider.swift in Sources */,
 				DDA54C791C1C475000FEBB19 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -3,3 +3,5 @@ build
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata
+
+*.xcscheme
