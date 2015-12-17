@@ -82,7 +82,11 @@ class NapySlider: UIControl {
     
     private var steps: Int {
         get {
-            return Int(round((max - min) / step)) + 1
+            if (min == max || step == 0) {
+                return 1
+            } else {
+                return Int(round((max - min) / step)) + 1
+            }
         }
     }
     
@@ -275,6 +279,8 @@ class NapySlider: UIControl {
     }
     
     private func moveHandleToPosition(position:Double, animated:Bool = false) {
+        if step == 0 { return }
+        
         var goPosition = position
         
         if position >= max { goPosition = max }
