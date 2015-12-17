@@ -73,6 +73,12 @@ class NapySlider: UIControl {
         }
     }
     
+    var disabled:Bool = false {
+        didSet {
+            sliderBackgroundView.alpha = disabled ? 0.4 : 1.0
+        }
+    }
+    
     
     private var steps: Int {
         get {
