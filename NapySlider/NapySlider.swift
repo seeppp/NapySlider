@@ -110,14 +110,12 @@ class NapySlider: UIControl {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        print("init with coder")
         super.init(coder: aDecoder)
         
         self.setup()
     }
 
     override init(frame: CGRect) {
-        print("init with frame")
         super.init(frame: frame)
         
         self.setup()
@@ -165,7 +163,9 @@ class NapySlider: UIControl {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        print("layout subviews")
+        
+        let sliderPaddingTop:CGFloat = 25
+        let sliderPaddingBottom:CGFloat = 20
         
         backgroundView.frame = CGRectMake(0, titleHeight, frame.size.width, frame.size.height - titleHeight)
         backgroundView.backgroundColor = mainBackgroundColor
@@ -176,10 +176,10 @@ class NapySlider: UIControl {
         titleLabel.frame = CGRectMake(0, 0, titleBackgroundView.frame.width, titleBackgroundView.frame.height)
         titleLabel.text = title
         titleLabel.textColor = handleColor
-        titleLabel.font = UIFont(name: titleLabel.font.fontName, size: 17)
+        titleLabel.font = UIFont.systemFontOfSize(14, weight: UIFontWeightSemibold)
         titleLabel.textAlignment = NSTextAlignment.Center
         
-        sliderBackgroundView.frame = CGRectMake(backgroundView.frame.width/2 - sliderWidth/2, 50, sliderWidth, backgroundView.frame.height - 90)
+        sliderBackgroundView.frame = CGRectMake(backgroundView.frame.width/2 - sliderWidth/2, sliderPaddingTop, sliderWidth, backgroundView.frame.height - (sliderPaddingTop + sliderPaddingBottom))
         sliderBackgroundView.backgroundColor = sliderUnselectedColor
         
         sliderView.frame = CGRectMake(0, sliderWidth/2, sliderBackgroundView.frame.width, sliderBackgroundView.frame.height - sliderWidth)
@@ -195,26 +195,26 @@ class NapySlider: UIControl {
         handleLabel.text = "37"
         handleLabel.textAlignment = NSTextAlignment.Center
         handleLabel.textColor = UIColor.whiteColor()
-        handleLabel.font = handleLabel.font.fontWithSize(12)
+        handleLabel.font = UIFont.systemFontOfSize(11, weight: UIFontWeightBold)
         handleLabel.backgroundColor = UIColor.clearColor()
         
-        minLabel.frame = CGRectMake(0, backgroundView.frame.height-30, backgroundView.frame.width, 20)
+        minLabel.frame = CGRectMake(0, backgroundView.frame.height-20, backgroundView.frame.width, 20)
         minLabel.text = textForPosition(min)
         minLabel.textAlignment = NSTextAlignment.Center
-        minLabel.font = UIFont(name: minLabel.font.fontName, size: 15)
+        minLabel.font = UIFont.systemFontOfSize(11, weight: UIFontWeightRegular)
         minLabel.textColor = handleColor
         
-        maxLabel.frame = CGRectMake(0, 20, backgroundView.frame.width, 20)
+        maxLabel.frame = CGRectMake(0, 5, backgroundView.frame.width, 20)
         maxLabel.text = textForPosition(max)
         maxLabel.textAlignment = NSTextAlignment.Center
-        maxLabel.font = UIFont(name: maxLabel.font.fontName, size: 15)
+        maxLabel.font = UIFont.systemFontOfSize(11, weight: UIFontWeightRegular)
         maxLabel.textColor = handleColor
         
         currentPosLabel.frame = CGRectMake(handleView.frame.width, handleView.frame.origin.y + handleHeight/2, handleWidth/2, handleHeight)
         currentPosLabel.text = "37"
         currentPosLabel.textAlignment = NSTextAlignment.Center
         currentPosLabel.textColor = UIColor.whiteColor()
-        currentPosLabel.font = handleLabel.font.fontWithSize(12)
+        handleLabel.font = UIFont.systemFontOfSize(13, weight: UIFontWeightBold)
         currentPosLabel.backgroundColor = tintColor
         currentPosLabel.alpha = 0.0
     }
@@ -291,7 +291,7 @@ class NapySlider: UIControl {
         let newY = CGFloat(minPosition - positionFromMin * stepheight)
         
         if animated {
-            UIView.animateWithDuration(0.7, animations: {
+            UIView.animateWithDuration(0.3, animations: {
                 self.handleView.frame.origin.y = newY - self.handleHeight/2
                 self.sliderFillView.frame = CGRectMake(0 , CGFloat(newY) + self.handleHeight/2, self.sliderBackgroundView.frame.width, self.sliderBackgroundView.frame.height - self.handleView.frame.origin.y - self.handleHeight)
                 self.currentPosLabel.frame = CGRectMake(self.handleView.frame.width, self.handleView.frame.origin.y + self.handleHeight/2, self.handleWidth/2, self.handleHeight)
