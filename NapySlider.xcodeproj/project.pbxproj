@@ -404,6 +404,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NapySlider/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.naptics.NapySlider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -415,6 +416,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NapySlider/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.naptics.NapySlider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -488,6 +490,7 @@
 				DDA54C9F1C1C475000FEBB19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DDA54CA01C1C475000FEBB19 /* Build configuration list for PBXNativeTarget "NapySliderTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +499,7 @@
 				DDA54CA21C1C475000FEBB19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DDA54CA31C1C475000FEBB19 /* Build configuration list for PBXNativeTarget "NapySliderUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +508,7 @@
 				DDA54CA51C1C475000FEBB19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
