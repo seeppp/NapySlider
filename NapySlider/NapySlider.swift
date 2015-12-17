@@ -68,7 +68,17 @@ class NapySlider: UIControl {
         get {
             let currentY = handleView.frame.origin.y + handleHeight/2
             let positionFromMin = -(Double(currentY) - minPosition - stepheight/2) / stepheight
-            let position = Int((positionFromMin * step + min) / step) * Int(step)
+            
+            // add an offset if slider should go to a negative value
+            var stepOffset:Double = 0
+            if min < 0 {
+            let zeroPosition = (0 - min)/Double(step) + 0.5
+                if positionFromMin < zeroPosition {
+                    stepOffset = 0 - step
+                }
+            }
+            
+            let position = Int((positionFromMin * step + min + stepOffset) / step) * Int(step)
             return Double(position)
         }
     }
