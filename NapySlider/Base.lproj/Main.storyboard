@@ -19,32 +19,32 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Moc-gm-ijQ" customClass="NapySlider" customModule="NapySlider" customModuleProvider="target">
                                 <rect key="frame" x="20" y="28" width="150" height="564"/>
-                                <color key="tintColor" red="0.27843137254901962" green="0.78431372549019607" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.31372550129890442" green="0.729411780834198" blue="0.53333336114883423" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="3PX-pG-5gP"/>
                                     <constraint firstAttribute="width" constant="150" id="CaM-uy-f6F"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="mainBackgroundColor">
-                                        <color key="value" red="0.94901960784313721" green="0.95686274509803915" blue="0.98039215686274506" alpha="0.5" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.84705883264541626" green="0.84705883264541626" blue="0.84705883264541626" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="handleColor">
-                                        <color key="value" red="0.58431372549019611" green="0.58823529411764708" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.58431375026702881" green="0.58823531866073608" blue="0.60392159223556519" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="titleBackgroundColor">
-                                        <color key="value" red="0.9137254901960784" green="0.92156862745098034" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.99215686321258545" green="0.80000001192092896" blue="0.10588235408067703" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="sliderUnselectedColor">
-                                        <color key="value" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.91372549533843994" green="0.92156863212585449" blue="0.94117647409439087" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="min">
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="max">
-                                        <real key="value" value="10"/>
+                                        <real key="value" value="100"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="step">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="MyNapySlider"/>
                                 </userDefinedRuntimeAttributes>
