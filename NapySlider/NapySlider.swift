@@ -92,6 +92,7 @@ class NapySlider: UIControl {
     var disabled:Bool = false {
         didSet {
             sliderBackgroundView.alpha = disabled ? 0.4 : 1.0
+            self.userInteractionEnabled = !disabled
         }
     }
     
@@ -211,7 +212,7 @@ class NapySlider: UIControl {
         sliderFillView.backgroundColor = tintColor
         
         handleLabel.frame = CGRectMake(0, 0, handleWidth, handleHeight)
-        handleLabel.text = "37"
+        handleLabel.text = ""
         handleLabel.textAlignment = NSTextAlignment.Center
         handleLabel.textColor = UIColor.whiteColor()
         handleLabel.font = UIFont.systemFontOfSize(11, weight: UIFontWeightBold)
@@ -274,7 +275,6 @@ class NapySlider: UIControl {
 
     override func cancelTrackingWithEvent(event: UIEvent?) {
         super.cancelTrackingWithEvent(event)
-        print("cancel tracking")
     }
     
     
