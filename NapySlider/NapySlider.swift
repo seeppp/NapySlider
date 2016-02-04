@@ -25,7 +25,11 @@ class NapySlider: UIControl {
     internal var currentPosLabel: UILabel!
     internal var maxLabel: UILabel!
     internal var minLabel: UILabel!
-    
+
+    internal var isFloatingPoint: Bool {
+        get { return step % 1 != 0 ? true : false }
+    }
+
     // public variables
     var titleHeight: CGFloat = 30
     var sliderWidth: CGFloat = 20
@@ -79,7 +83,8 @@ class NapySlider: UIControl {
                 }
             }
             
-            let position = Int((positionFromMin * step + min + stepOffset) / step) * Int(step)
+//            let position = Int((positionFromMin * step + min + stepOffset) / step) * Int(step)
+            let position = Double(Int((positionFromMin * step + min + stepOffset) / step)) * step
             return Double(position)
         }
     }
@@ -259,7 +264,7 @@ class NapySlider: UIControl {
         super.endTrackingWithTouch(touch, withEvent: event)
         
         let endPosition = handlePosition
-        handlePosition = round(endPosition)
+        handlePosition = endPosition
         handleLabel.text = textForPosition(handlePosition)
 
         UIView.animateWithDuration(0.3, animations: {
@@ -328,7 +333,11 @@ class NapySlider: UIControl {
     }
     
     private func textForPosition(position:Double) -> String {
-        return String(format: "%0.0f", arguments: [position])
+        if isFloatingPoint { return String(format: "%0.1f", arguments: [position]) }
+        else { return String(format: "%0.0f", arguments: [position]) }
+    }
+}
+
 
 class TriangleView : UIView {
     
