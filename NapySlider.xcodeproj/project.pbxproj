@@ -12,8 +12,6 @@
 		DDA54C7E1C1C475000FEBB19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA54C7C1C1C475000FEBB19 /* Main.storyboard */; };
 		DDA54C801C1C475000FEBB19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDA54C7F1C1C475000FEBB19 /* Assets.xcassets */; };
 		DDA54C831C1C475000FEBB19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA54C811C1C475000FEBB19 /* LaunchScreen.storyboard */; };
-		DDA54C8E1C1C475000FEBB19 /* NapySliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA54C8D1C1C475000FEBB19 /* NapySliderTests.swift */; };
-		DDA54C991C1C475000FEBB19 /* NapySliderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA54C981C1C475000FEBB19 /* NapySliderUITests.swift */; };
 		DDA54CA71C1C477100FEBB19 /* NapySlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA54CA61C1C477100FEBB19 /* NapySlider.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,11 +41,7 @@
 		DDA54C821C1C475000FEBB19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDA54C841C1C475000FEBB19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDA54C891C1C475000FEBB19 /* NapySliderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NapySliderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DDA54C8D1C1C475000FEBB19 /* NapySliderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NapySliderTests.swift; sourceTree = "<group>"; };
-		DDA54C8F1C1C475000FEBB19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDA54C941C1C475000FEBB19 /* NapySliderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NapySliderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DDA54C981C1C475000FEBB19 /* NapySliderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NapySliderUITests.swift; sourceTree = "<group>"; };
-		DDA54C9A1C1C475000FEBB19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDA54CA61C1C477100FEBB19 /* NapySlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NapySlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,8 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				DDA54C771C1C475000FEBB19 /* NapySlider */,
-				DDA54C8C1C1C475000FEBB19 /* NapySliderTests */,
-				DDA54C971C1C475000FEBB19 /* NapySliderUITests */,
 				DDA54C761C1C475000FEBB19 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,24 +100,6 @@
 				DDA54CA61C1C477100FEBB19 /* NapySlider.swift */,
 			);
 			path = NapySlider;
-			sourceTree = "<group>";
-		};
-		DDA54C8C1C1C475000FEBB19 /* NapySliderTests */ = {
-			isa = PBXGroup;
-			children = (
-				DDA54C8D1C1C475000FEBB19 /* NapySliderTests.swift */,
-				DDA54C8F1C1C475000FEBB19 /* Info.plist */,
-			);
-			path = NapySliderTests;
-			sourceTree = "<group>";
-		};
-		DDA54C971C1C475000FEBB19 /* NapySliderUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DDA54C981C1C475000FEBB19 /* NapySliderUITests.swift */,
-				DDA54C9A1C1C475000FEBB19 /* Info.plist */,
-			);
-			path = NapySliderUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,7 +243,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDA54C8E1C1C475000FEBB19 /* NapySliderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +250,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDA54C991C1C475000FEBB19 /* NapySliderUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
