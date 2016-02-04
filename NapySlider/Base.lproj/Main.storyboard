@@ -46,6 +46,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="step">
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="MyNapySlider"/>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
