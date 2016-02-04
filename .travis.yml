@@ -1,0 +1,5 @@
+language: objective-c
+osx_image: xcode7.2
+xcode_project: NapySlider.xcodeproj
+xcode_scheme: NapySlider
+xcode_sdk: iphonesimulator9.2
