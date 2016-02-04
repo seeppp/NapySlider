@@ -4,6 +4,10 @@ A vertical slider UIControl element written in swift
 ## Howto
 The easiest way to add a NapySlider is in the storyboard. Add a ```UIView``` element and set its custom Class to ```NapySlider```. Now you can define the inspectable properties, like min, max, step and all the colors.
 
+![NapySlider Attribute Inspector](/exampleImages/napyslider_attr_inspector.png)
+
+And don't forget to modify the ```tintColor```
+
 ### Add it programatically
 Of course, you can add a slider by code.
 
@@ -18,4 +22,3 @@ myNapySlider.step = 20
 
 view.addSubview(myNapySlider)
 ```
-
