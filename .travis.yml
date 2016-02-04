@@ -4,4 +4,8 @@ xcode_project: NapySlider.xcodeproj
 xcode_scheme: NapySlider
 xcode_sdk: iphonesimulator9.2
 notifications:
-  slack: naptics:0jvqNePbU1ycOfefKuHZ3A6o
+  slack:
+    rooms:
+      - naptics:0jvqNePbU1ycOfefKuHZ3A6o
+    on_success: change
+    on_failure: always
