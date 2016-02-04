@@ -18,6 +18,7 @@ class NapySlider: UIControl {
     internal var sliderBackgroundView: UIView!
     internal var sliderFillView: UIView!
     internal var handleView: UIView!
+    internal var currentPosTriangle: TriangleView!
     
     internal var titleLabel: UILabel!
     internal var handleLabel: UILabel!
@@ -169,6 +170,9 @@ class NapySlider: UIControl {
         
         currentPosLabel = UILabel()
         sliderBackgroundView.addSubview(currentPosLabel)
+        
+        currentPosTriangle = TriangleView()
+        currentPosLabel.addSubview(currentPosTriangle)
     }
     
     override func layoutSubviews() {
@@ -227,8 +231,12 @@ class NapySlider: UIControl {
         handleLabel.font = UIFont.systemFontOfSize(13, weight: UIFontWeightBold)
         currentPosLabel.backgroundColor = tintColor
         currentPosLabel.alpha = 0.0
+        
+        currentPosTriangle.frame = CGRectMake(-10, 10, currentPosLabel.frame.height-20, currentPosLabel.frame.height-20)
+        currentPosTriangle.tintColor = tintColor
+        currentPosTriangle.backgroundColor = UIColor.clearColor()
     }
-    
+
     override func beginTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
         super.beginTrackingWithTouch(touch, withEvent: event)
         
@@ -237,28 +245,28 @@ class NapySlider: UIControl {
         })
         return true
     }
-    
+
     override func continueTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
         super.continueTrackingWithTouch(touch, withEvent: event)
         let _ = handlePosition
         let point = touch.locationInView(sliderView)
         moveHandleToPoint(point)
-        
+
         return true
     }
-    
+
     override func endTrackingWithTouch(touch: UITouch?, withEvent event: UIEvent?) {
         super.endTrackingWithTouch(touch, withEvent: event)
         
         let endPosition = handlePosition
         handlePosition = round(endPosition)
         handleLabel.text = textForPosition(handlePosition)
-        
+
         UIView.animateWithDuration(0.3, animations: {
             self.currentPosLabel.alpha = 0.0
         })
     }
-    
+
     override func cancelTrackingWithEvent(event: UIEvent?) {
         super.cancelTrackingWithEvent(event)
         print("cancel tracking")
@@ -290,7 +298,7 @@ class NapySlider: UIControl {
     
     private func moveHandleToPosition(position:Double, animated:Bool = false) {
         if step == 0 { return }
-        
+
         var goPosition = position
         
         if position >= max { goPosition = max }
@@ -321,5 +329,28 @@ class NapySlider: UIControl {
     
     private func textForPosition(position:Double) -> String {
         return String(format: "%0.0f", arguments: [position])
+
+class TriangleView : UIView {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    override func drawRect(rect: CGRect) {
+        
+        let ctx : CGContextRef = UIGraphicsGetCurrentContext()!
+        
+        CGContextBeginPath(ctx)
+        CGContextMoveToPoint(ctx, CGRectGetMinX(rect), CGRectGetMaxY(rect)/2.0)
+        CGContextAddLineToPoint(ctx, CGRectGetMaxX(rect), CGRectGetMinY(rect))
+        CGContextAddLineToPoint(ctx, CGRectGetMaxX(rect), CGRectGetMaxY(rect))
+        CGContextClosePath(ctx)
+        
+        CGContextSetFillColorWithColor(ctx, tintColor.CGColor)
+        CGContextFillPath(ctx)
     }
 }
