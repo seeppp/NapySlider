@@ -230,8 +230,8 @@ class NapySlider: UIControl {
         maxLabel.font = UIFont.systemFontOfSize(11, weight: UIFontWeightRegular)
         maxLabel.textColor = handleColor
         
-        currentPosLabel.frame = CGRectMake(handleView.frame.width, handleView.frame.origin.y + handleHeight/2, handleWidth/2, handleHeight)
-        currentPosLabel.text = "37"
+        currentPosLabel.frame = CGRectMake(handleView.frame.width, handleView.frame.origin.y + handleHeight*0.5/2, handleWidth, handleHeight * 1.5)
+        currentPosLabel.text = ""
         currentPosLabel.textAlignment = NSTextAlignment.Center
         currentPosLabel.textColor = UIColor.whiteColor()
         handleLabel.font = UIFont.systemFontOfSize(13, weight: UIFontWeightBold)
@@ -292,7 +292,7 @@ class NapySlider: UIControl {
         handleView.frame.origin.y = CGFloat(newY)
         sliderFillView.frame = CGRectMake(0 , CGFloat(newY) + handleHeight, sliderBackgroundView.frame.width, sliderBackgroundView.frame.height-handleView.frame.origin.y - handleHeight)
         
-        currentPosLabel.frame = CGRectMake(handleView.frame.width, handleView.frame.origin.y + handleHeight/2, handleWidth/2, handleHeight)
+        currentPosLabel.frame = CGRectMake(handleView.frame.width, handleView.frame.origin.y + handleHeight*0.5/2, currentPosLabel.frame.width, currentPosLabel.frame.height)
         
         let newText = textForPosition(handlePosition)
         if handleLabel.text != newText {
@@ -317,12 +317,12 @@ class NapySlider: UIControl {
             UIView.animateWithDuration(0.3, animations: {
                 self.handleView.frame.origin.y = newY - self.handleHeight/2
                 self.sliderFillView.frame = CGRectMake(0 , CGFloat(newY) + self.handleHeight/2, self.sliderBackgroundView.frame.width, self.sliderBackgroundView.frame.height - self.handleView.frame.origin.y - self.handleHeight)
-                self.currentPosLabel.frame = CGRectMake(self.handleView.frame.width, self.handleView.frame.origin.y + self.handleHeight/2, self.handleWidth/2, self.handleHeight)
+                self.currentPosLabel.frame = CGRectMake(self.handleView.frame.width, self.handleView.frame.origin.y + self.handleHeight*0.5/2, self.currentPosLabel.frame.width, self.currentPosLabel.frame.height)
             })
         } else {
             self.handleView.frame.origin.y = newY - self.handleHeight/2
             self.sliderFillView.frame.origin.y = CGFloat(newY) + self.handleHeight
-            currentPosLabel.frame = CGRectMake(handleView.frame.width, handleView.frame.origin.y + handleHeight/2, handleWidth/2, handleHeight)
+            currentPosLabel.frame = CGRectMake(handleView.frame.width, handleView.frame.origin.y + handleHeight*0.5/2, currentPosLabel.frame.width, currentPosLabel.frame.height)
         }
         
         let newText = textForPosition(position)
