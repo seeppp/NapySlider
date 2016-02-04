@@ -25,7 +25,11 @@ class NapySlider: UIControl {
     internal var currentPosLabel: UILabel!
     internal var maxLabel: UILabel!
     internal var minLabel: UILabel!
-    
+
+    internal var isFloatingPoint: Bool {
+        get { return step % 1 != 0 ? true : false }
+    }
+
     // public variables
     var titleHeight: CGFloat = 30
     var sliderWidth: CGFloat = 20
@@ -79,7 +83,8 @@ class NapySlider: UIControl {
                 }
             }
             
-            let position = Int((positionFromMin * step + min + stepOffset) / step) * Int(step)
+//            let position = Int((positionFromMin * step + min + stepOffset) / step) * Int(step)
+            let position = Double(Int((positionFromMin * step + min + stepOffset) / step)) * step
             return Double(position)
         }
     }
@@ -87,6 +92,7 @@ class NapySlider: UIControl {
     var disabled:Bool = false {
         didSet {
             sliderBackgroundView.alpha = disabled ? 0.4 : 1.0
+            self.userInteractionEnabled = !disabled
         }
     }
     
@@ -206,7 +212,7 @@ class NapySlider: UIControl {
         sliderFillView.backgroundColor = tintColor
         
         handleLabel.frame = CGRectMake(0, 0, handleWidth, handleHeight)
-        handleLabel.text = "37"
+        handleLabel.text = ""
         handleLabel.textAlignment = NSTextAlignment.Center
         handleLabel.textColor = UIColor.whiteColor()
         handleLabel.font = UIFont.systemFontOfSize(11, weight: UIFontWeightBold)
@@ -224,8 +230,8 @@ class NapySlider: UIControl {
         maxLabel.font = UIFont.systemFontOfSize(11, weight: UIFontWeightRegular)
         maxLabel.textColor = handleColor
         
-        currentPosLabel.frame = CGRectMake(handleView.frame.width, handleView.frame.origin.y + handleHeight/2, handleWidth/2, handleHeight)
-        currentPosLabel.text = "37"
+        currentPosLabel.frame = CGRectMake(handleView.frame.width, handleView.frame.origin.y + handleHeight*0.5/2, handleWidth, handleHeight * 1.5)
+        currentPosLabel.text = ""
         currentPosLabel.textAlignment = NSTextAlignment.Center
         currentPosLabel.textColor = UIColor.whiteColor()
         handleLabel.font = UIFont.systemFontOfSize(13, weight: UIFontWeightBold)
@@ -259,7 +265,7 @@ class NapySlider: UIControl {
         super.endTrackingWithTouch(touch, withEvent: event)
         
         let endPosition = handlePosition
-        handlePosition = round(endPosition)
+        handlePosition = endPosition
         handleLabel.text = textForPosition(handlePosition)
 
         UIView.animateWithDuration(0.3, animations: {
@@ -269,7 +275,6 @@ class NapySlider: UIControl {
 
     override func cancelTrackingWithEvent(event: UIEvent?) {
         super.cancelTrackingWithEvent(event)
-        print("cancel tracking")
     }
     
     
@@ -287,7 +292,7 @@ class NapySlider: UIControl {
         handleView.frame.origin.y = CGFloat(newY)
         sliderFillView.frame = CGRectMake(0 , CGFloat(newY) + handleHeight, sliderBackgroundView.frame.width, sliderBackgroundView.frame.height-handleView.frame.origin.y - handleHeight)
         
-        currentPosLabel.frame = CGRectMake(handleView.frame.width, handleView.frame.origin.y + handleHeight/2, handleWidth/2, handleHeight)
+        currentPosLabel.frame = CGRectMake(handleView.frame.width, handleView.frame.origin.y + handleHeight*0.5/2, currentPosLabel.frame.width, currentPosLabel.frame.height)
         
         let newText = textForPosition(handlePosition)
         if handleLabel.text != newText {
@@ -312,12 +317,12 @@ class NapySlider: UIControl {
             UIView.animateWithDuration(0.3, animations: {
                 self.handleView.frame.origin.y = newY - self.handleHeight/2
                 self.sliderFillView.frame = CGRectMake(0 , CGFloat(newY) + self.handleHeight/2, self.sliderBackgroundView.frame.width, self.sliderBackgroundView.frame.height - self.handleView.frame.origin.y - self.handleHeight)
-                self.currentPosLabel.frame = CGRectMake(self.handleView.frame.width, self.handleView.frame.origin.y + self.handleHeight/2, self.handleWidth/2, self.handleHeight)
+                self.currentPosLabel.frame = CGRectMake(self.handleView.frame.width, self.handleView.frame.origin.y + self.handleHeight*0.5/2, self.currentPosLabel.frame.width, self.currentPosLabel.frame.height)
             })
         } else {
             self.handleView.frame.origin.y = newY - self.handleHeight/2
             self.sliderFillView.frame.origin.y = CGFloat(newY) + self.handleHeight
-            currentPosLabel.frame = CGRectMake(handleView.frame.width, handleView.frame.origin.y + handleHeight/2, handleWidth/2, handleHeight)
+            currentPosLabel.frame = CGRectMake(handleView.frame.width, handleView.frame.origin.y + handleHeight*0.5/2, currentPosLabel.frame.width, currentPosLabel.frame.height)
         }
         
         let newText = textForPosition(position)
@@ -328,7 +333,11 @@ class NapySlider: UIControl {
     }
     
     private func textForPosition(position:Double) -> String {
-        return String(format: "%0.0f", arguments: [position])
+        if isFloatingPoint { return String(format: "%0.1f", arguments: [position]) }
+        else { return String(format: "%0.0f", arguments: [position]) }
+    }
+}
+
 
 class TriangleView : UIView {
     
