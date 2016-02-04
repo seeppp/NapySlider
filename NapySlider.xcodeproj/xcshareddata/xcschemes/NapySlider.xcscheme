@@ -28,26 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DDA54C881C1C475000FEBB19"
-               BuildableName = "NapySliderTests.xctest"
-               BlueprintName = "NapySliderTests"
-               ReferencedContainer = "container:NapySlider.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DDA54C931C1C475000FEBB19"
-               BuildableName = "NapySliderUITests.xctest"
-               BlueprintName = "NapySliderUITests"
-               ReferencedContainer = "container:NapySlider.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
