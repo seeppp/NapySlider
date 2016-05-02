@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class NapySlider: UIControl {
+public class NapySlider: UIControl {
     
     // internal variables, our views
     internal var backgroundView: UIView!
@@ -126,7 +126,7 @@ class NapySlider: UIControl {
         }
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         self.setup()
@@ -181,7 +181,7 @@ class NapySlider: UIControl {
         currentPosLabel.addSubview(currentPosTriangle)
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         
         let sliderPaddingTop:CGFloat = 25
@@ -243,7 +243,7 @@ class NapySlider: UIControl {
         currentPosTriangle.backgroundColor = UIColor.clearColor()
     }
 
-    override func beginTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
+    public override func beginTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
         super.beginTrackingWithTouch(touch, withEvent: event)
         
         UIView.animateWithDuration(0.3, animations: {
@@ -252,7 +252,7 @@ class NapySlider: UIControl {
         return true
     }
 
-    override func continueTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
+    public override func continueTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
         super.continueTrackingWithTouch(touch, withEvent: event)
         let _ = handlePosition
         let point = touch.locationInView(sliderView)
@@ -261,7 +261,7 @@ class NapySlider: UIControl {
         return true
     }
 
-    override func endTrackingWithTouch(touch: UITouch?, withEvent event: UIEvent?) {
+    public override func endTrackingWithTouch(touch: UITouch?, withEvent event: UIEvent?) {
         super.endTrackingWithTouch(touch, withEvent: event)
         
         let endPosition = handlePosition
@@ -273,7 +273,7 @@ class NapySlider: UIControl {
         })
     }
 
-    override func cancelTrackingWithEvent(event: UIEvent?) {
+    public override func cancelTrackingWithEvent(event: UIEvent?) {
         super.cancelTrackingWithEvent(event)
     }
     

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "NapySlider"
-  s.version          = "0.1"
+  s.version          = "0.2"
   s.summary          = "A vertical slider UIControl element written in swift."
   s.homepage         = "https://github.com/seeppp/NapySlider"
   # s.screenshots     = "https://github.com/seeppp/NapySlider/blob/master/exampleImages/napyslidermov.gif"
