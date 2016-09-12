@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-public class NapySlider: UIControl {
+open class NapySlider: UIControl {
     
     // internal variables, our views
     internal var backgroundView: UIView!
@@ -27,7 +27,7 @@ public class NapySlider: UIControl {
     internal var minLabel: UILabel!
 
     internal var isFloatingPoint: Bool {
-        get { return step % 1 != 0 ? true : false }
+        get { return step.truncatingRemainder(dividingBy: 1) != 0 ? true : false }
     }
 
     // public variables
@@ -58,10 +58,10 @@ public class NapySlider: UIControl {
     @IBInspectable var step: Double = 1
     
     // colors
-    @IBInspectable var handleColor: UIColor = UIColor.grayColor()
-    @IBInspectable var mainBackgroundColor: UIColor = UIColor.groupTableViewBackgroundColor()
-    @IBInspectable var titleBackgroundColor: UIColor = UIColor.lightGrayColor()
-    @IBInspectable var sliderUnselectedColor: UIColor = UIColor.lightGrayColor()
+    @IBInspectable var handleColor: UIColor = UIColor.gray
+    @IBInspectable var mainBackgroundColor: UIColor = UIColor.groupTableViewBackground
+    @IBInspectable var titleBackgroundColor: UIColor = UIColor.lightGray
+    @IBInspectable var sliderUnselectedColor: UIColor = UIColor.lightGray
     
     /**
      the position of the handle. The handle moves animated when setting the variable
@@ -92,12 +92,12 @@ public class NapySlider: UIControl {
     var disabled:Bool = false {
         didSet {
             sliderBackgroundView.alpha = disabled ? 0.4 : 1.0
-            self.userInteractionEnabled = !disabled
+            self.isUserInteractionEnabled = !disabled
         }
     }
     
     
-    private var steps: Int {
+    fileprivate var steps: Int {
         get {
             if (min == max || step == 0) {
                 return 1
@@ -107,20 +107,20 @@ public class NapySlider: UIControl {
         }
     }
     
-    private var maxPosition:Double {
+    fileprivate var maxPosition:Double {
         get {
             return 0
         }
     }
     
-    private var minPosition:Double {
+    fileprivate var minPosition:Double {
         get {
             return Double(sliderView.frame.height)
         }
     }
     
     
-    private var stepheight:Double {
+    fileprivate var stepheight:Double {
         get {
             return (minPosition - maxPosition) / Double(steps - 1)
         }
@@ -138,9 +138,9 @@ public class NapySlider: UIControl {
         self.setup()
     }
     
-    private func setup() {
+    fileprivate func setup() {
         backgroundView = UIView()
-        backgroundView.userInteractionEnabled = false
+        backgroundView.isUserInteractionEnabled = false
         addSubview(backgroundView)
         
         titleBackgroundView = UIView()
@@ -150,19 +150,19 @@ public class NapySlider: UIControl {
         titleBackgroundView.addSubview(titleLabel)
         
         sliderBackgroundView = UIView()
-        sliderBackgroundView.userInteractionEnabled = false
+        sliderBackgroundView.isUserInteractionEnabled = false
         backgroundView.addSubview(sliderBackgroundView)
         
         sliderFillView = UIView()
-        sliderFillView.userInteractionEnabled = false
+        sliderFillView.isUserInteractionEnabled = false
         sliderBackgroundView.addSubview(sliderFillView)
         
         sliderView = UIView()
-        sliderView.userInteractionEnabled = false
+        sliderView.isUserInteractionEnabled = false
         sliderBackgroundView.addSubview(sliderView)
         
         handleView = UIView()
-        handleView.userInteractionEnabled = false
+        handleView.isUserInteractionEnabled = false
         sliderView.addSubview(handleView)
         
         handleLabel = UILabel()
@@ -181,104 +181,104 @@ public class NapySlider: UIControl {
         currentPosLabel.addSubview(currentPosTriangle)
     }
     
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         
         let sliderPaddingTop:CGFloat = 25
         let sliderPaddingBottom:CGFloat = 20
         
-        backgroundView.frame = CGRectMake(0, titleHeight, frame.size.width, frame.size.height - titleHeight)
+        backgroundView.frame = CGRect(x: 0, y: titleHeight, width: frame.size.width, height: frame.size.height - titleHeight)
         backgroundView.backgroundColor = mainBackgroundColor
         
-        titleBackgroundView.frame = CGRectMake(0, 0, frame.size.width, titleHeight)
+        titleBackgroundView.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: titleHeight)
         titleBackgroundView.backgroundColor = titleBackgroundColor
         
-        titleLabel.frame = CGRectMake(0, 0, titleBackgroundView.frame.width, titleBackgroundView.frame.height)
+        titleLabel.frame = CGRect(x: 0, y: 0, width: titleBackgroundView.frame.width, height: titleBackgroundView.frame.height)
         titleLabel.text = title
         titleLabel.textColor = handleColor
-        titleLabel.font = UIFont.systemFontOfSize(14, weight: UIFontWeightSemibold)
-        titleLabel.textAlignment = NSTextAlignment.Center
+        titleLabel.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightSemibold)
+        titleLabel.textAlignment = NSTextAlignment.center
         
-        sliderBackgroundView.frame = CGRectMake(backgroundView.frame.width/2 - sliderWidth/2, sliderPaddingTop, sliderWidth, backgroundView.frame.height - (sliderPaddingTop + sliderPaddingBottom))
+        sliderBackgroundView.frame = CGRect(x: backgroundView.frame.width/2 - sliderWidth/2, y: sliderPaddingTop, width: sliderWidth, height: backgroundView.frame.height - (sliderPaddingTop + sliderPaddingBottom))
         sliderBackgroundView.backgroundColor = sliderUnselectedColor
         
-        sliderView.frame = CGRectMake(0, sliderWidth/2, sliderBackgroundView.frame.width, sliderBackgroundView.frame.height - sliderWidth)
-        sliderView.backgroundColor = UIColor.clearColor()
+        sliderView.frame = CGRect(x: 0, y: sliderWidth/2, width: sliderBackgroundView.frame.width, height: sliderBackgroundView.frame.height - sliderWidth)
+        sliderView.backgroundColor = UIColor.clear
         
-        handleView.frame = CGRectMake(-(handleWidth-sliderWidth)/2, sliderView.frame.height/2 - handleHeight/2, handleWidth, handleHeight)
+        handleView.frame = CGRect(x: -(handleWidth-sliderWidth)/2, y: sliderView.frame.height/2 - handleHeight/2, width: handleWidth, height: handleHeight)
         handleView.backgroundColor = handleColor
         
-        sliderFillView.frame = CGRectMake(0, handleView.frame.origin.y + handleHeight, sliderBackgroundView.frame.width, sliderBackgroundView.frame.height-handleView.frame.origin.y - handleHeight)
+        sliderFillView.frame = CGRect(x: 0, y: handleView.frame.origin.y + handleHeight, width: sliderBackgroundView.frame.width, height: sliderBackgroundView.frame.height-handleView.frame.origin.y - handleHeight)
         sliderFillView.backgroundColor = tintColor
         
-        handleLabel.frame = CGRectMake(0, 0, handleWidth, handleHeight)
+        handleLabel.frame = CGRect(x: 0, y: 0, width: handleWidth, height: handleHeight)
         handleLabel.text = ""
-        handleLabel.textAlignment = NSTextAlignment.Center
-        handleLabel.textColor = UIColor.whiteColor()
-        handleLabel.font = UIFont.systemFontOfSize(11, weight: UIFontWeightBold)
-        handleLabel.backgroundColor = UIColor.clearColor()
+        handleLabel.textAlignment = NSTextAlignment.center
+        handleLabel.textColor = UIColor.white
+        handleLabel.font = UIFont.systemFont(ofSize: 11, weight: UIFontWeightBold)
+        handleLabel.backgroundColor = UIColor.clear
         
-        minLabel.frame = CGRectMake(0, backgroundView.frame.height-20, backgroundView.frame.width, 20)
+        minLabel.frame = CGRect(x: 0, y: backgroundView.frame.height-20, width: backgroundView.frame.width, height: 20)
         minLabel.text = textForPosition(min)
-        minLabel.textAlignment = NSTextAlignment.Center
-        minLabel.font = UIFont.systemFontOfSize(11, weight: UIFontWeightRegular)
+        minLabel.textAlignment = NSTextAlignment.center
+        minLabel.font = UIFont.systemFont(ofSize: 11, weight: UIFontWeightRegular)
         minLabel.textColor = handleColor
         
-        maxLabel.frame = CGRectMake(0, 5, backgroundView.frame.width, 20)
+        maxLabel.frame = CGRect(x: 0, y: 5, width: backgroundView.frame.width, height: 20)
         maxLabel.text = textForPosition(max)
-        maxLabel.textAlignment = NSTextAlignment.Center
-        maxLabel.font = UIFont.systemFontOfSize(11, weight: UIFontWeightRegular)
+        maxLabel.textAlignment = NSTextAlignment.center
+        maxLabel.font = UIFont.systemFont(ofSize: 11, weight: UIFontWeightRegular)
         maxLabel.textColor = handleColor
         
-        currentPosLabel.frame = CGRectMake(handleView.frame.width, handleView.frame.origin.y + handleHeight*0.5/2, handleWidth, handleHeight * 1.5)
+        currentPosLabel.frame = CGRect(x: handleView.frame.width, y: handleView.frame.origin.y + handleHeight*0.5/2, width: handleWidth, height: handleHeight * 1.5)
         currentPosLabel.text = ""
-        currentPosLabel.textAlignment = NSTextAlignment.Center
-        currentPosLabel.textColor = UIColor.whiteColor()
-        handleLabel.font = UIFont.systemFontOfSize(13, weight: UIFontWeightBold)
+        currentPosLabel.textAlignment = NSTextAlignment.center
+        currentPosLabel.textColor = UIColor.white
+        handleLabel.font = UIFont.systemFont(ofSize: 13, weight: UIFontWeightBold)
         currentPosLabel.backgroundColor = tintColor
         currentPosLabel.alpha = 0.0
         
-        currentPosTriangle.frame = CGRectMake(-10, 10, currentPosLabel.frame.height-20, currentPosLabel.frame.height-20)
+        currentPosTriangle.frame = CGRect(x: -10, y: 10, width: currentPosLabel.frame.height-20, height: currentPosLabel.frame.height-20)
         currentPosTriangle.tintColor = tintColor
-        currentPosTriangle.backgroundColor = UIColor.clearColor()
+        currentPosTriangle.backgroundColor = UIColor.clear
     }
 
-    public override func beginTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
-        super.beginTrackingWithTouch(touch, withEvent: event)
+    open override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        super.beginTracking(touch, with: event)
         
-        UIView.animateWithDuration(0.3, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.currentPosLabel.alpha = 1.0
         })
         return true
     }
 
-    public override func continueTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
-        super.continueTrackingWithTouch(touch, withEvent: event)
+    open override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        super.continueTracking(touch, with: event)
         let _ = handlePosition
-        let point = touch.locationInView(sliderView)
+        let point = touch.location(in: sliderView)
         moveHandleToPoint(point)
 
         return true
     }
 
-    public override func endTrackingWithTouch(touch: UITouch?, withEvent event: UIEvent?) {
-        super.endTrackingWithTouch(touch, withEvent: event)
+    open override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        super.endTracking(touch, with: event)
         
         let endPosition = handlePosition
         handlePosition = endPosition
         handleLabel.text = textForPosition(handlePosition)
 
-        UIView.animateWithDuration(0.3, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.currentPosLabel.alpha = 0.0
         })
     }
 
-    public override func cancelTrackingWithEvent(event: UIEvent?) {
-        super.cancelTrackingWithEvent(event)
+    open override func cancelTracking(with event: UIEvent?) {
+        super.cancelTracking(with: event)
     }
     
     
-    private func moveHandleToPoint(point:CGPoint) {
+    fileprivate func moveHandleToPoint(_ point:CGPoint) {
         var newY:CGFloat
         
         newY = point.y - CGFloat(handleView.frame.height/2)
@@ -290,9 +290,9 @@ public class NapySlider: UIControl {
         }
         
         handleView.frame.origin.y = CGFloat(newY)
-        sliderFillView.frame = CGRectMake(0 , CGFloat(newY) + handleHeight, sliderBackgroundView.frame.width, sliderBackgroundView.frame.height-handleView.frame.origin.y - handleHeight)
+        sliderFillView.frame = CGRect(x: 0 , y: CGFloat(newY) + handleHeight, width: sliderBackgroundView.frame.width, height: sliderBackgroundView.frame.height-handleView.frame.origin.y - handleHeight)
         
-        currentPosLabel.frame = CGRectMake(handleView.frame.width, handleView.frame.origin.y + handleHeight*0.5/2, currentPosLabel.frame.width, currentPosLabel.frame.height)
+        currentPosLabel.frame = CGRect(x: handleView.frame.width, y: handleView.frame.origin.y + handleHeight*0.5/2, width: currentPosLabel.frame.width, height: currentPosLabel.frame.height)
         
         let newText = textForPosition(handlePosition)
         if handleLabel.text != newText {
@@ -301,7 +301,7 @@ public class NapySlider: UIControl {
         }
     }
     
-    private func moveHandleToPosition(position:Double, animated:Bool = false) {
+    fileprivate func moveHandleToPosition(_ position:Double, animated:Bool = false) {
         if step == 0 { return }
 
         var goPosition = position
@@ -314,15 +314,15 @@ public class NapySlider: UIControl {
         let newY = CGFloat(minPosition - positionFromMin * stepheight)
         
         if animated {
-            UIView.animateWithDuration(0.3, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                 self.handleView.frame.origin.y = newY - self.handleHeight/2
-                self.sliderFillView.frame = CGRectMake(0 , CGFloat(newY) + self.handleHeight/2, self.sliderBackgroundView.frame.width, self.sliderBackgroundView.frame.height - self.handleView.frame.origin.y - self.handleHeight)
-                self.currentPosLabel.frame = CGRectMake(self.handleView.frame.width, self.handleView.frame.origin.y + self.handleHeight*0.5/2, self.currentPosLabel.frame.width, self.currentPosLabel.frame.height)
+                self.sliderFillView.frame = CGRect(x: 0 , y: CGFloat(newY) + self.handleHeight/2, width: self.sliderBackgroundView.frame.width, height: self.sliderBackgroundView.frame.height - self.handleView.frame.origin.y - self.handleHeight)
+                self.currentPosLabel.frame = CGRect(x: self.handleView.frame.width, y: self.handleView.frame.origin.y + self.handleHeight*0.5/2, width: self.currentPosLabel.frame.width, height: self.currentPosLabel.frame.height)
             })
         } else {
             self.handleView.frame.origin.y = newY - self.handleHeight/2
             self.sliderFillView.frame.origin.y = CGFloat(newY) + self.handleHeight
-            currentPosLabel.frame = CGRectMake(handleView.frame.width, handleView.frame.origin.y + handleHeight*0.5/2, currentPosLabel.frame.width, currentPosLabel.frame.height)
+            currentPosLabel.frame = CGRect(x: handleView.frame.width, y: handleView.frame.origin.y + handleHeight*0.5/2, width: currentPosLabel.frame.width, height: currentPosLabel.frame.height)
         }
         
         let newText = textForPosition(position)
@@ -332,7 +332,7 @@ public class NapySlider: UIControl {
         }
     }
     
-    private func textForPosition(position:Double) -> String {
+    fileprivate func textForPosition(_ position:Double) -> String {
         if isFloatingPoint { return String(format: "%0.1f", arguments: [position]) }
         else { return String(format: "%0.0f", arguments: [position]) }
     }
@@ -349,17 +349,17 @@ class TriangleView : UIView {
         super.init(frame: frame)
     }
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         
-        let ctx : CGContextRef = UIGraphicsGetCurrentContext()!
+        let ctx : CGContext = UIGraphicsGetCurrentContext()!
         
-        CGContextBeginPath(ctx)
-        CGContextMoveToPoint(ctx, CGRectGetMinX(rect), CGRectGetMaxY(rect)/2.0)
-        CGContextAddLineToPoint(ctx, CGRectGetMaxX(rect), CGRectGetMinY(rect))
-        CGContextAddLineToPoint(ctx, CGRectGetMaxX(rect), CGRectGetMaxY(rect))
-        CGContextClosePath(ctx)
+        ctx.beginPath()
+        ctx.move(to: CGPoint(x: rect.minX, y: rect.maxY/2.0))
+        ctx.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
+        ctx.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+        ctx.closePath()
         
-        CGContextSetFillColorWithColor(ctx, tintColor.CGColor)
-        CGContextFillPath(ctx)
+        ctx.setFillColor(tintColor.cgColor)
+        ctx.fillPath()
     }
 }

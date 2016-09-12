@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         napySlider.title = "Awesomeness"
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         napySlider.min = 0
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         
         napySlider.handlePosition = napySlider.min
         
-        napySlider2 = NapySlider(frame: CGRectMake(napySlider.frame.origin.x + napySlider.frame.width + 10, napySlider.frame.origin.y, napySlider.frame.width, napySlider.frame.height))
+        napySlider2 = NapySlider(frame: CGRect(x: napySlider.frame.origin.x + napySlider.frame.width + 10, y: napySlider.frame.origin.y, width: napySlider.frame.width, height: napySlider.frame.height))
         view.addSubview(napySlider2)
         
         napySlider2.min = 0
@@ -39,7 +39,5 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
