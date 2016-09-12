@@ -2,7 +2,7 @@ language: objective-c
 osx_image: xcode8
 xcode_project: NapySlider.xcodeproj
 xcode_scheme: NapySlider
-xcode_sdk: iphonesimulator9.2
+xcode_sdk: iphonesimulator10.0
 notifications:
   slack:
     rooms:
