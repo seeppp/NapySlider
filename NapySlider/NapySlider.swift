@@ -330,6 +330,8 @@ open class NapySlider: UIControl {
             handleLabel.text = newText
             currentPosLabel.text = newText
         }
+        
+        self.sendActions(for: .valueChanged)
     }
     
     fileprivate func textForPosition(_ position:Double) -> String {

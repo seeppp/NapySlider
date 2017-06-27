@@ -39,5 +39,9 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func valueChanged(_ sender: NapySlider) {
+        print("value has changed to \(napySlider.handlePosition)")
+    }
 }
 
