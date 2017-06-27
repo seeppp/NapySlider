@@ -31,42 +31,42 @@ open class NapySlider: UIControl {
     }
 
     // public variables
-    var titleHeight: CGFloat = 30
-    var sliderWidth: CGFloat = 20
-    var handleHeight: CGFloat = 20
-    var handleWidth: CGFloat = 50
+    open var titleHeight: CGFloat = 30
+    open var sliderWidth: CGFloat = 20
+    open var handleHeight: CGFloat = 20
+    open var handleWidth: CGFloat = 50
     
     // public inspectable variables
-    @IBInspectable var title: String = "Hello" {
+    @IBInspectable open var title: String = "Hello" {
         didSet {
             titleLabel.text = title
         }
     }
     
-    @IBInspectable var min: Double = 0 {
+    @IBInspectable open var min: Double = 0 {
         didSet {
             minLabel.text = textForPosition(min)
         }
     }
     
-    @IBInspectable var max: Double = 10 {
+    @IBInspectable open var max: Double = 10 {
         didSet {
             maxLabel.text = textForPosition(max)
         }
     }
     
-    @IBInspectable var step: Double = 1
+    @IBInspectable open var step: Double = 1
     
     // colors
-    @IBInspectable var handleColor: UIColor = UIColor.gray
-    @IBInspectable var mainBackgroundColor: UIColor = UIColor.groupTableViewBackground
-    @IBInspectable var titleBackgroundColor: UIColor = UIColor.lightGray
-    @IBInspectable var sliderUnselectedColor: UIColor = UIColor.lightGray
+    @IBInspectable open var handleColor: UIColor = UIColor.gray
+    @IBInspectable open var mainBackgroundColor: UIColor = UIColor.groupTableViewBackground
+    @IBInspectable open var titleBackgroundColor: UIColor = UIColor.lightGray
+    @IBInspectable open var sliderUnselectedColor: UIColor = UIColor.lightGray
     
     /**
      the position of the handle. The handle moves animated when setting the variable
     */
-    var handlePosition:Double {
+    open var handlePosition:Double {
         set (newHandlePosition) {
             moveHandleToPosition(newHandlePosition, animated: true)
         }
@@ -89,7 +89,7 @@ open class NapySlider: UIControl {
         }
     }
     
-    var disabled:Bool = false {
+    open var disabled:Bool = false {
         didSet {
             sliderBackgroundView.alpha = disabled ? 0.4 : 1.0
             self.isUserInteractionEnabled = !disabled
@@ -132,7 +132,7 @@ open class NapySlider: UIControl {
         self.setup()
     }
 
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.setup()
