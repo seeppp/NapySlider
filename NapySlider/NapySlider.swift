@@ -196,7 +196,7 @@ open class NapySlider: UIControl {
         titleLabel.frame = CGRect(x: 0, y: 0, width: titleBackgroundView.frame.width, height: titleBackgroundView.frame.height)
         titleLabel.text = title
         titleLabel.textColor = handleColor
-        titleLabel.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightSemibold)
+        titleLabel.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.semibold)
         titleLabel.textAlignment = NSTextAlignment.center
         
         sliderBackgroundView.frame = CGRect(x: backgroundView.frame.width/2 - sliderWidth/2, y: sliderPaddingTop, width: sliderWidth, height: backgroundView.frame.height - (sliderPaddingTop + sliderPaddingBottom))
@@ -215,26 +215,26 @@ open class NapySlider: UIControl {
         handleLabel.text = ""
         handleLabel.textAlignment = NSTextAlignment.center
         handleLabel.textColor = UIColor.white
-        handleLabel.font = UIFont.systemFont(ofSize: 11, weight: UIFontWeightBold)
+        handleLabel.font = UIFont.systemFont(ofSize: 11, weight: UIFont.Weight.bold)
         handleLabel.backgroundColor = UIColor.clear
         
         minLabel.frame = CGRect(x: 0, y: backgroundView.frame.height-20, width: backgroundView.frame.width, height: 20)
         minLabel.text = textForPosition(min)
         minLabel.textAlignment = NSTextAlignment.center
-        minLabel.font = UIFont.systemFont(ofSize: 11, weight: UIFontWeightRegular)
+        minLabel.font = UIFont.systemFont(ofSize: 11, weight: UIFont.Weight.regular)
         minLabel.textColor = handleColor
         
         maxLabel.frame = CGRect(x: 0, y: 5, width: backgroundView.frame.width, height: 20)
         maxLabel.text = textForPosition(max)
         maxLabel.textAlignment = NSTextAlignment.center
-        maxLabel.font = UIFont.systemFont(ofSize: 11, weight: UIFontWeightRegular)
+        maxLabel.font = UIFont.systemFont(ofSize: 11, weight: UIFont.Weight.regular)
         maxLabel.textColor = handleColor
         
         currentPosLabel.frame = CGRect(x: handleView.frame.width, y: handleView.frame.origin.y + handleHeight*0.5/2, width: handleWidth, height: handleHeight * 1.5)
         currentPosLabel.text = ""
         currentPosLabel.textAlignment = NSTextAlignment.center
         currentPosLabel.textColor = UIColor.white
-        handleLabel.font = UIFont.systemFont(ofSize: 13, weight: UIFontWeightBold)
+        handleLabel.font = UIFont.systemFont(ofSize: 13, weight: UIFont.Weight.bold)
         currentPosLabel.backgroundColor = tintColor
         currentPosLabel.alpha = 0.0
         
