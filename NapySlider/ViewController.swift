@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var napySlider: NapySlider!
-    var napySlider2: NapySlider!
+    @objc var napySlider2: NapySlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
